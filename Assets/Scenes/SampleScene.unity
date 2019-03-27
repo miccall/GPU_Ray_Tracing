@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 19e881b31b3f5464899fa4d2dc88f9a8, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.7170003, g: 0.6484493, b: 0.49628615, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -278,7 +278,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RayTracingShader: {fileID: 7200000, guid: d169e73345c490f4a9b4b06f01c80aa9, type: 3}
-  skyboxTexture: {fileID: 2800000, guid: 66461701f7cadc74f9c7ac217a3afd5e, type: 3}
+  skyboxTexture: {fileID: 2800000, guid: 70ab1a3fa22fd2246a2fe831e2e4d175, type: 3}
+  DirectionalLight: {fileID: 170076734}
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -291,10 +292,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f634c044b0760a344b14d85cb214bac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sensitivityX: 15
-  sensitivityY: 15
-  minimumX: -360
-  maximumX: 360
+  sensitivityX: 5
+  sensitivityY: 5
   minimumY: -60
   maximumY: 60
   axes: 0

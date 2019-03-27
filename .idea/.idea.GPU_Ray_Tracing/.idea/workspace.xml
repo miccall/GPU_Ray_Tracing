@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GPU_Ray_Tracing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GPU_Ray_Tracing/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,31 +15,31 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1127">
-              <caret line="49" column="29" lean-forward="true" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+            <state relative-caret-position="530">
+              <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
               <folding>
-                <marker date="1553677654560" expanded="true" signature="19:133" ph="/* ReSharper disable InconsistentNaming ... */" />
-                <marker date="1553677654560" expanded="true" signature="151:2779" ph="{...}" />
-                <marker date="1553677654560" expanded="true" signature="203:2777" ph="{...}" />
-                <marker date="1553677654560" expanded="true" signature="481:547" ph="{...}" />
-                <marker date="1553677654560" expanded="true" signature="590:974" ph="{...}" />
-                <marker date="1553677654560" expanded="true" signature="1067:1155" ph="{...}" />
-                <marker date="1553677654560" expanded="true" signature="1210:1998" ph="{...}" />
-                <marker date="1553677654560" expanded="true" signature="2039:2582" ph="{...}" />
-                <marker date="1553677654560" expanded="true" signature="2621:2762" ph="{...}" />
+                <marker date="1553681733723" expanded="true" signature="19:133" ph="/* ReSharper disable InconsistentNaming ... */" />
+                <marker date="1553681733723" expanded="true" signature="151:3145" ph="{...}" />
+                <marker date="1553681733723" expanded="true" signature="203:3143" ph="{...}" />
+                <marker date="1553681733723" expanded="true" signature="520:586" ph="{...}" />
+                <marker date="1553681733723" expanded="true" signature="629:1239" ph="{...}" />
+                <marker date="1553681733723" expanded="true" signature="1332:1420" ph="{...}" />
+                <marker date="1553681733723" expanded="true" signature="1475:2263" ph="{...}" />
+                <marker date="1553681733723" expanded="true" signature="2304:2847" ph="{...}" />
+                <marker date="1553681733723" expanded="true" signature="2886:3128" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="684">
-              <caret line="98" column="12" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
+            <state relative-caret-position="257">
+              <caret line="125" column="7" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -65,14 +66,14 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scenes/AddShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Scenes/CameraMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="878" />
-    <option name="y" value="7" />
+    <option name="x" value="397" />
+    <option name="y" value="2" />
     <option name="width" value="1435" />
     <option name="height" value="1410" />
   </component>
@@ -126,12 +127,12 @@
       <option name="presentableId" value="Default" />
       <updated>1553609205764</updated>
       <workItem from="1553609208982" duration="5801000" />
-      <workItem from="1553671632802" duration="5215000" />
+      <workItem from="1553671632802" duration="7784000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11016000" />
+    <option name="totallyTimeSpent" value="13585000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -143,7 +144,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="703" y="6" width="1148" height="1128" extended-state="0" />
+    <frame x="318" y="2" width="1148" height="1128" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.27595446" />
@@ -209,24 +210,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1127">
-          <caret line="49" column="29" lean-forward="true" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
-          <folding>
-            <marker date="1553677654560" expanded="true" signature="19:133" ph="/* ReSharper disable InconsistentNaming ... */" />
-            <marker date="1553677654560" expanded="true" signature="151:2779" ph="{...}" />
-            <marker date="1553677654560" expanded="true" signature="203:2777" ph="{...}" />
-            <marker date="1553677654560" expanded="true" signature="481:547" ph="{...}" />
-            <marker date="1553677654560" expanded="true" signature="590:974" ph="{...}" />
-            <marker date="1553677654560" expanded="true" signature="1067:1155" ph="{...}" />
-            <marker date="1553677654560" expanded="true" signature="1210:1998" ph="{...}" />
-            <marker date="1553677654560" expanded="true" signature="2039:2582" ph="{...}" />
-            <marker date="1553677654560" expanded="true" signature="2621:2762" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scenes/AddShader.shader">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -242,8 +225,26 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="684">
-          <caret line="98" column="12" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
+        <state relative-caret-position="257">
+          <caret line="125" column="7" selection-start-line="125" selection-start-column="7" selection-end-line="125" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="530">
+          <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+          <folding>
+            <marker date="1553681733723" expanded="true" signature="19:133" ph="/* ReSharper disable InconsistentNaming ... */" />
+            <marker date="1553681733723" expanded="true" signature="151:3145" ph="{...}" />
+            <marker date="1553681733723" expanded="true" signature="203:3143" ph="{...}" />
+            <marker date="1553681733723" expanded="true" signature="520:586" ph="{...}" />
+            <marker date="1553681733723" expanded="true" signature="629:1239" ph="{...}" />
+            <marker date="1553681733723" expanded="true" signature="1332:1420" ph="{...}" />
+            <marker date="1553681733723" expanded="true" signature="1475:2263" ph="{...}" />
+            <marker date="1553681733723" expanded="true" signature="2304:2847" ph="{...}" />
+            <marker date="1553681733723" expanded="true" signature="2886:3128" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>

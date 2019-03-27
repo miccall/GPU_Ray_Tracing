@@ -5,6 +5,7 @@
 // with cs.SetTexture
 RWTexture2D<float4> Result;
 float4x4 _CameraToWorld;
+float4 _DirectionalLight;
 float4x4 _CameraInverseProjection;
 Texture2D <float4> _SkyboxTexture;
 SamplerState sampler_SkyboxTexture;
@@ -106,14 +107,23 @@ float3 Shade(inout Ray ray, RayHit hit)
     {
         // just Return the normal to color 
         // return hit.normal * 0.5f + 0.5f;
-        
-        float3 specular = float3(0.9f, 0.9f, 0.9f);
-        // Reflect the ray and multiply energy with specular reflection
+       
+        float3 specular = float3(0.04f, 0.04f, 0.04f);
+        float3 diffuse = min(1.0f - specular, float3(0.8f, 0.8f, 0.8f));
         ray.origin = hit.position + hit.normal * 0.001f;
         ray.direction = reflect(ray.direction, hit.normal);
         ray.energy *= specular;
-        // Return nothing
-        return float3(0.0f, 0.0f, 0.0f);
+        
+        // float3 albedo = float3(0.8f, 0.8f, 0.8f);
+        bool shadow = false;
+        Ray shadowRay = CreateRay(hit.position + hit.normal * 0.001f, -1 * _DirectionalLight.xyz);
+        RayHit shadowHit = Trace(shadowRay);
+        if (shadowHit.distance != 1.#INF)
+        {
+            return float3(0.0f, 0.0, 0.0f);
+        }
+        return saturate(dot(hit.normal, _DirectionalLight.xyz) * -1) * _DirectionalLight.w * diffuse;
+       
     }
     else
     {

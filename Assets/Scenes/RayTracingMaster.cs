@@ -9,6 +9,7 @@ namespace Scenes
     {
         public ComputeShader RayTracingShader;
         public Texture skyboxTexture ;
+        public Light DirectionalLight;
         private RenderTexture _target;
         private Camera _camera;
         private uint _currentSample ;
@@ -24,7 +25,11 @@ namespace Scenes
             RayTracingShader.SetMatrix("_CameraInverseProjection", _camera.projectionMatrix.inverse);
             RayTracingShader.SetTexture(0, "_SkyboxTexture", skyboxTexture);
             RayTracingShader.SetVector("_PixelOffset", new Vector2(Random.value, Random.value));
-
+            
+            // light dir ;
+            var l = DirectionalLight.transform.forward;
+            RayTracingShader.SetVector("_DirectionalLight", new Vector4(l.x, l.y, l.z, DirectionalLight.intensity ));
+            
         }
         
         private void OnRenderImage(RenderTexture source, RenderTexture destination)
@@ -65,9 +70,10 @@ namespace Scenes
         
         private void Update()
         {
-            if (!transform.hasChanged) return;
+            if (!transform.hasChanged && !DirectionalLight.transform.hasChanged) return;
             _currentSample = 0;
             transform.hasChanged = false;
+            DirectionalLight.transform.hasChanged = false;
         }
         
     }
