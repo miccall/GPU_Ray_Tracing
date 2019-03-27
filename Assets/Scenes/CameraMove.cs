@@ -11,17 +11,11 @@ public class CameraMove : MonoBehaviour
     private Vector3 dirVector3;
     private Vector3 rotaVector3;
     private float paramater = 0.1f;
-    //旋转参数
-    private float xspeed = -0.05f;
-    private float yspeed = 0.1f;
     //x轴（水平）速度
     public float sensitivityX = 15F;
     //y轴（垂直）速度
     public float sensitivityY = 15F;
-    //x轴（水平）最小旋转值
-    public float minimumX = -360F;
-    //x轴（水平）最大旋转值
-    public float maximumX = 360F;
+    
     //y轴（垂直）最小旋转值
     public float minimumY = -60F;
     //y轴（垂直）最大旋转值
@@ -32,7 +26,7 @@ public class CameraMove : MonoBehaviour
  
     void Update ()
     {
-        if (axes == RotationAxes.MouseXAndY)
+        if (axes == RotationAxes.MouseXAndY && Input.GetMouseButton(0))
         {
             float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
 			

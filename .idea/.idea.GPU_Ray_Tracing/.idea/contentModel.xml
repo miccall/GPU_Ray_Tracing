@@ -18,6 +18,7 @@
           </e>
         </e>
         <e p="Scenes" t="Include">
+          <e p="AddShader.shader" t="Include" />
           <e p="CameraMove.cs" t="Include" />
           <e p="RayTracingMaster.cs" t="Include" />
           <e p="RayTracingShader.compute" t="Include" />
