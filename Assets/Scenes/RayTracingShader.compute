@@ -87,7 +87,7 @@ void IntersectSphere(Ray ray, inout RayHit bestHit, float4 sphere)
 RayHit Trace(Ray ray)
 {
     RayHit bestHit = CreateRayHit();
-    IntersectGroundPlane(ray, bestHit);
+    //IntersectGroundPlane(ray, bestHit);
     IntersectSphere(ray, bestHit, float4(0, 3.0f, 0, 1.0f));
     return bestHit;
 }
@@ -96,7 +96,7 @@ float3 Shade(inout Ray ray, RayHit hit)
 {
     if (hit.distance < 1.#INF)
     {
-        // Return the normal
+        // just Return the normal to color 
         return hit.normal * 0.5f + 0.5f;
     }
     else
@@ -120,9 +120,6 @@ void CSMain (uint3 id : SV_DispatchThreadID)
     // Get a ray for the UVs
     Ray ray = CreateCameraRay(uv);
     // Write some colors
-    // 对天空盒进行采样
-    float theta = acos(ray.direction.y) / -PI;
-    float phi = atan2(ray.direction.x, -ray.direction.z) / -PI * 0.5f;
     RayHit hit = Trace(ray);
     float3 result = Shade(ray, hit);
     Result[id.xy] = float4(result, 1);

@@ -4,9 +4,21 @@
     <e p="C:\Users\miccall\.Rider2018.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\miccall\.Rider2018.3\system\resharper-host\local\Transient\ReSharperHost\v183\SolutionCaches\_GPU_Ray_Tracing.-880412663.00" t="ExcludeRecursive" />
     <e p="E:\UnityTestProject\GPU_Ray_Tracing" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Plugins" t="Include">
+          <e p="GitHub" t="Include">
+            <e p="Editor" t="Include">
+              <e p="credits.txt" t="Include" />
+              <e p="eula.txt" t="Include" />
+              <e p="ExtensionLoader.cs" t="Include" />
+              <e p="UnityAPIWrapper.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scenes" t="Include">
+          <e p="CameraMove.cs" t="Include" />
           <e p="RayTracingMaster.cs" t="Include" />
           <e p="RayTracingShader.compute" t="Include" />
         </e>
