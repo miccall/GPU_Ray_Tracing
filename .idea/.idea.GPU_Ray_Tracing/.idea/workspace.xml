@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6a98131f-590d-44bb-b753-4a8b6f9ead11" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.GPU_Ray_Tracing/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GPU_Ray_Tracing/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GPU_Ray_Tracing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GPU_Ray_Tracing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CameraMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CameraMove.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/cape_hill_1k.hdr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/cape_hill_1k.hdr.meta" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,68 +17,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="456">
-              <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
+            <state relative-caret-position="1127">
+              <caret line="49" column="29" lean-forward="true" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
               <folding>
-                <marker date="1553677197445" expanded="true" signature="19:133" ph="/* ReSharper disable InconsistentNaming ... */" />
-                <marker date="1553677197445" expanded="true" signature="151:2792" ph="{...}" />
-                <marker date="1553677197445" expanded="true" signature="203:2790" ph="{...}" />
-                <marker date="1553677197445" expanded="true" signature="481:547" ph="{...}" />
-                <marker date="1553677197445" expanded="true" signature="590:974" ph="{...}" />
-                <marker date="1553677197445" expanded="true" signature="1067:1155" ph="{...}" />
-                <marker date="1553677197445" expanded="true" signature="1210:2011" ph="{...}" />
-                <marker date="1553677197445" expanded="true" signature="2052:2595" ph="{...}" />
-                <marker date="1553677197445" expanded="true" signature="2634:2775" ph="{...}" />
+                <marker date="1553677654560" expanded="true" signature="19:133" ph="/* ReSharper disable InconsistentNaming ... */" />
+                <marker date="1553677654560" expanded="true" signature="151:2779" ph="{...}" />
+                <marker date="1553677654560" expanded="true" signature="203:2777" ph="{...}" />
+                <marker date="1553677654560" expanded="true" signature="481:547" ph="{...}" />
+                <marker date="1553677654560" expanded="true" signature="590:974" ph="{...}" />
+                <marker date="1553677654560" expanded="true" signature="1067:1155" ph="{...}" />
+                <marker date="1553677654560" expanded="true" signature="1210:1998" ph="{...}" />
+                <marker date="1553677654560" expanded="true" signature="2039:2582" ph="{...}" />
+                <marker date="1553677654560" expanded="true" signature="2621:2762" ph="{...}" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Scenes/CameraMove.cs">
+        <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-              <folding>
-                <marker date="1553677279031" expanded="false" signature="6:78" ph="..." />
-                <marker date="1553677279031" expanded="true" signature="105:153" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="194:2676" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="730:2674" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="808:1153" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="1199:1296" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="1342:1600" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="1682:1803" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="1840:1964" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="2001:2125" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="2162:2284" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="2321:2445" ph="{...}" />
-                <marker date="1553677279031" expanded="true" signature="2482:2604" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Assets/Scenes/AddShader.shader">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
-              <folding>
-                <marker date="1553676870618" expanded="true" signature="26:1266" ph="{...}" />
-                <marker date="1553676870618" expanded="true" signature="47:139" ph="{...}" />
-                <marker date="1553676870618" expanded="true" signature="158:1264" ph="{...}" />
-                <marker date="1553676870618" expanded="true" signature="344:1258" ph="{...}" />
-                <marker date="1553676870618" expanded="true" signature="367:1243" ph="{...}" />
-              </folding>
+            <state relative-caret-position="684">
+              <caret line="98" column="12" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -91,6 +48,7 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>IntersectSphere</find>
+      <find>InitRenderTexture</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -106,9 +64,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scenes/AddShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute" />
-        <option value="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" />
         <option value="$PROJECT_DIR$/Assets/Scenes/CameraMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute" />
       </list>
     </option>
   </component>
@@ -168,12 +126,12 @@
       <option name="presentableId" value="Default" />
       <updated>1553609205764</updated>
       <workItem from="1553609208982" duration="5801000" />
-      <workItem from="1553671632802" duration="4298000" />
+      <workItem from="1553671632802" duration="5215000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10099000" />
+    <option name="totallyTimeSpent" value="11016000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -229,10 +187,49 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Assets/Scenes/CameraMove.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-22">
+          <caret line="17" column="4" lean-forward="true" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
+          <folding>
+            <marker date="1553677297524" expanded="false" signature="6:78" ph="..." />
+            <marker date="1553677297524" expanded="true" signature="105:153" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="194:2576" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="630:2574" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="708:1053" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="1099:1196" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="1242:1500" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="1582:1703" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="1740:1864" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="1901:2025" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="2062:2184" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="2221:2345" ph="{...}" />
+            <marker date="1553677297524" expanded="true" signature="2382:2504" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1127">
+          <caret line="49" column="29" lean-forward="true" selection-start-line="49" selection-start-column="29" selection-end-line="49" selection-end-column="29" />
+          <folding>
+            <marker date="1553677654560" expanded="true" signature="19:133" ph="/* ReSharper disable InconsistentNaming ... */" />
+            <marker date="1553677654560" expanded="true" signature="151:2779" ph="{...}" />
+            <marker date="1553677654560" expanded="true" signature="203:2777" ph="{...}" />
+            <marker date="1553677654560" expanded="true" signature="481:547" ph="{...}" />
+            <marker date="1553677654560" expanded="true" signature="590:974" ph="{...}" />
+            <marker date="1553677654560" expanded="true" signature="1067:1155" ph="{...}" />
+            <marker date="1553677654560" expanded="true" signature="1210:1998" ph="{...}" />
+            <marker date="1553677654560" expanded="true" signature="2039:2582" ph="{...}" />
+            <marker date="1553677654560" expanded="true" signature="2621:2762" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scenes/AddShader.shader">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="594">
-          <caret line="42" column="53" lean-forward="true" selection-start-line="42" selection-start-column="53" selection-end-line="42" selection-end-column="53" />
+        <state>
           <folding>
             <marker date="1553676870618" expanded="true" signature="26:1266" ph="{...}" />
             <marker date="1553676870618" expanded="true" signature="47:139" ph="{...}" />
@@ -245,48 +242,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="118" column="40" lean-forward="true" selection-start-line="118" selection-start-column="40" selection-end-line="118" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="49" column="16" lean-forward="true" selection-start-line="49" selection-start-column="16" selection-end-line="49" selection-end-column="16" />
-          <folding>
-            <marker date="1553677197445" expanded="true" signature="19:133" ph="/* ReSharper disable InconsistentNaming ... */" />
-            <marker date="1553677197445" expanded="true" signature="151:2792" ph="{...}" />
-            <marker date="1553677197445" expanded="true" signature="203:2790" ph="{...}" />
-            <marker date="1553677197445" expanded="true" signature="481:547" ph="{...}" />
-            <marker date="1553677197445" expanded="true" signature="590:974" ph="{...}" />
-            <marker date="1553677197445" expanded="true" signature="1067:1155" ph="{...}" />
-            <marker date="1553677197445" expanded="true" signature="1210:2011" ph="{...}" />
-            <marker date="1553677197445" expanded="true" signature="2052:2595" ph="{...}" />
-            <marker date="1553677197445" expanded="true" signature="2634:2775" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Scenes/CameraMove.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="12" column="35" lean-forward="true" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
-          <folding>
-            <marker date="1553677279031" expanded="false" signature="6:78" ph="..." />
-            <marker date="1553677279031" expanded="true" signature="105:153" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="194:2676" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="730:2674" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="808:1153" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="1199:1296" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="1342:1600" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="1682:1803" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="1840:1964" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="2001:2125" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="2162:2284" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="2321:2445" ph="{...}" />
-            <marker date="1553677279031" expanded="true" signature="2482:2604" ph="{...}" />
-          </folding>
+        <state relative-caret-position="684">
+          <caret line="98" column="12" selection-start-line="98" selection-start-column="12" selection-end-line="98" selection-end-column="12" />
         </state>
       </provider>
     </entry>

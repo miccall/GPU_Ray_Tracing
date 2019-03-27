@@ -16,6 +16,7 @@ struct Ray
 {
     float3 origin;
     float3 direction;
+    float3 energy;
 };
 
 Ray CreateRay(float3 origin, float3 direction)
@@ -23,6 +24,7 @@ Ray CreateRay(float3 origin, float3 direction)
     Ray ray;
     ray.origin = origin;
     ray.direction = direction;
+    ray.energy = float3(1.0f, 1.0f, 1.0f);
     return ray;
 }
 
@@ -90,7 +92,11 @@ RayHit Trace(Ray ray)
 {
     RayHit bestHit = CreateRayHit();
     //IntersectGroundPlane(ray, bestHit);
-    IntersectSphere(ray, bestHit, float4(0, 3.0f, 0, 1.0f));
+    
+    for(int i = 0 ; i < 5 ; i ++ )
+        for( int y = 0 ; y < 5 ; y++)
+            IntersectSphere(ray, bestHit, float4(i*3, 3.0f, y*3, 1.0f));
+            
     return bestHit;
 }
 
@@ -99,10 +105,21 @@ float3 Shade(inout Ray ray, RayHit hit)
     if (hit.distance < 1.#INF)
     {
         // just Return the normal to color 
-        return hit.normal * 0.5f + 0.5f;
+        // return hit.normal * 0.5f + 0.5f;
+        
+        float3 specular = float3(0.9f, 0.9f, 0.9f);
+        // Reflect the ray and multiply energy with specular reflection
+        ray.origin = hit.position + hit.normal * 0.001f;
+        ray.direction = reflect(ray.direction, hit.normal);
+        ray.energy *= specular;
+        // Return nothing
+        return float3(0.0f, 0.0f, 0.0f);
     }
     else
     {
+        // Erase the ray's energy - the sky doesn't reflect anything
+        ray.energy = 0.0f;
+        
         // Sample the skybox and write it
         float theta = acos(ray.direction.y) / -PI;
         float phi = atan2(ray.direction.x, -ray.direction.z) / -PI * 0.5f;
@@ -122,7 +139,16 @@ void CSMain (uint3 id : SV_DispatchThreadID)
     // Get a ray for the UVs
     Ray ray = CreateCameraRay(uv);
     // Write some colors
-    RayHit hit = Trace(ray);
-    float3 result = Shade(ray, hit);
+
+    float3 result = float3(0, 0, 0);
+    // 反射次数 
+    for (int i = 0; i < 8; i++)
+    {
+        RayHit hit = Trace(ray);
+        result += ray.energy * Shade(ray, hit);
+        if (!any(ray.energy))
+            break;
+    }
+
     Result[id.xy] = float4(result, 1);
 }

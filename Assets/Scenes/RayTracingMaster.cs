@@ -48,7 +48,6 @@ namespace Scenes
             _addMaterial.SetFloat("_Sample", _currentSample);
             Graphics.Blit(_target, destination, _addMaterial);
             _currentSample++;
-            
         }
         private void InitRenderTexture()
         {
