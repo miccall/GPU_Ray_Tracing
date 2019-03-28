@@ -10,7 +10,7 @@ public class CameraMove : MonoBehaviour
 {
     private Vector3 dirVector3;
     private Vector3 rotaVector3;
-    private float paramater = 0.1f;
+    private float paramater = 1.0f;
     //x轴（水平）速度
     public float sensitivityX = 15F;
     //y轴（垂直）速度

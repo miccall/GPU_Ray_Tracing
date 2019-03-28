@@ -11,6 +11,14 @@ Texture2D <float4> _SkyboxTexture;
 SamplerState sampler_SkyboxTexture;
 static const float PI = 3.14159265f;
 float2 _PixelOffset;
+float2 _Pixel;
+float _Seed;
+float rand()
+{
+    float result = frac(sin(_Seed / 100.0f * dot(_Pixel, float2(12.9898f, 78.233f))) * 43758.5453f);
+    _Seed += 1.0f;
+    return result;
+}
 
 struct Ray
 {
@@ -33,6 +41,11 @@ Ray CreateRay(float3 origin, float3 direction)
     ray.direction = direction;
     ray.energy = float3(1.0f, 1.0f, 1.0f);
     return ray;
+}
+
+float sdot(float3 x, float3 y, float f = 1.0f)
+{
+    return saturate(dot(x, y) * f);
 }
 
 Ray CreateCameraRay(float2 uv)
@@ -79,6 +92,29 @@ void IntersectGroundPlane(Ray ray, inout RayHit bestHit)
         bestHit.position = ray.origin + t * ray.direction;
         bestHit.normal = float3(0.0f, 1.0f, 0.0f);
     }
+}
+
+float3x3 GetTangentSpace(float3 normal)
+{
+    // Choose a helper vector for the cross product
+    float3 helper = float3(1, 0, 0);
+    if (abs(normal.x) > 0.99f)
+        helper = float3(0, 0, 1);
+    // Generate vectors
+    float3 tangent = normalize(cross(normal, helper));
+    float3 binormal = normalize(cross(normal, tangent));
+    return float3x3(tangent, binormal, normal);
+}
+
+float3 SampleHemisphere(float3 normal)
+{
+    // Uniformly sample hemisphere direction
+    float cosTheta = rand();
+    float sinTheta = sqrt(max(0.0f, 1.0f - cosTheta * cosTheta));
+    float phi = 2 * PI * rand();
+    float3 tangentSpaceDir = float3(cos(phi) * sinTheta, sin(phi) * sinTheta, cosTheta);
+    // Transform direction to world space
+    return mul(tangentSpaceDir, GetTangentSpace(normal));
 }
 
 void IntersectSphere(Ray ray, inout RayHit bestHit, uint sphereIndex)
@@ -138,6 +174,7 @@ float3 Shade(inout Ray ray, RayHit hit)
         // just Return the normal to color 
         // return hit.normal * 0.5f + 0.5f;
        
+       /*
         ray.origin = hit.position + hit.normal * 0.001f;
         ray.direction = reflect(ray.direction, hit.normal);
         ray.energy *= hit.specular;
@@ -151,12 +188,23 @@ float3 Shade(inout Ray ray, RayHit hit)
             return float3(0.0f, 0.0, 0.0f);
         }
         return saturate(dot(hit.normal, _DirectionalLight.xyz) * -1) * _DirectionalLight.w * hit.albedo;
-       
+       */
+      
+        
+        // Phong shading
+        ray.origin = hit.position + hit.normal * 0.001f;
+        float3 reflected = reflect(ray.direction, hit.normal);
+        ray.direction = SampleHemisphere(hit.normal);
+        float3 diffuse = 2 * min(1.0f - hit.specular, hit.albedo);
+        float alpha = 30.0f;
+        float3 specular = hit.specular * (alpha + 2) * pow(sdot(ray.direction, reflected), alpha);
+        ray.energy *= (diffuse + specular) * sdot(hit.normal, ray.direction);
+        return 0.0f;
     }
     else
     {
         // Erase the ray's energy - the sky doesn't reflect anything
-        ray.energy = 0.0f;
+        ray.energy = 0.09f;
         
         // Sample the skybox and write it
         float theta = acos(ray.direction.y) / -PI;
@@ -170,6 +218,7 @@ float3 Shade(inout Ray ray, RayHit hit)
 [numthreads(8,8,1)]
 void CSMain (uint3 id : SV_DispatchThreadID)
 {
+    _Pixel = id.xy;
     uint width, height;
     Result.GetDimensions(width, height);
     // Transform pixel to [-1,1] range
