@@ -111,10 +111,13 @@ namespace Scenes
 
         private struct Sphere
         {
-            public Vector3 position;
-            public float radius;
-            public Vector3 albedo;
-            public Vector3 specular;
+            public Vector3 position; // 12 
+            public float radius;     // 4 
+            public Vector3 albedo;    // 12 
+            public Vector3 specular;  // 12 
+            public float smoothness;  // 4 
+            public Vector3 emission;  // 12 
+            // total = 48 + 8 = 56 
         }
         
 
@@ -123,6 +126,7 @@ namespace Scenes
             Random.InitState(SphereSeed);
             var spheres = new List<Sphere>();
             // Add a number of random spheres
+            
             for (var i = 0; i < SpheresMax; i++)
             {
                 var sphere = new Sphere
@@ -139,19 +143,31 @@ namespace Scenes
                     if (Vector3.SqrMagnitude(sphere.position - other.position) < minDist * minDist)
                         goto SkipSphere;
                 }
-                // Albedo and specular color
-                var color = Random.ColorHSV();
-                var metal = Random.value < 0.5f;
-                //bool metal = Random.value < 0.0f;
-                sphere.albedo = metal ? Vector3.zero : new Vector3(color.r, color.g, color.b);
-                sphere.specular = metal ? new Vector3(color.r, color.g, color.b) : Vector3.one * 0.04f;
-                
+                var chance = Random.value;
+                if (chance < 0.8f)
+                {
+                    // Albedo and specular color
+                    var color = Random.ColorHSV();
+                    var metal = chance < 0.4f;
+                    sphere.albedo = metal ? Vector4.zero : new Vector4(color.r, color.g, color.b);
+                    sphere.specular = metal ? new Vector4(color.r, color.g, color.b) : new Vector4(0.04f, 0.04f, 0.04f);
+                    sphere.smoothness = Random.value;
+                }
+                else
+                {
+                    var emission = Random.ColorHSV(0, 1, 0, 1, 3.0f, 8.0f);
+                    //var emission = new Color(1.0f,1.0f,1.0f);
+                    sphere.emission = new Vector3(emission.r, emission.g, emission.b);
+                }
                 // Add the sphere to the list
                 spheres.Add(sphere);
                 SkipSphere: ;
             }
             // Assign to compute buffer
-            _sphereBuffer = new ComputeBuffer(spheres.Count, 40);
+            // Assign to compute buffer
+            _sphereBuffer?.Release();
+            if (spheres.Count <= 0) return;
+            _sphereBuffer = new ComputeBuffer(spheres.Count, 56);
             _sphereBuffer.SetData(spheres);
         }
     }

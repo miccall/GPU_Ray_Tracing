@@ -32,6 +32,8 @@ struct Sphere
     float radius;
     float3 albedo;
     float3 specular;
+    float smoothness;
+    float3 emission;
 };
 StructuredBuffer<Sphere> _Spheres;
 Ray CreateRay(float3 origin, float3 direction)
@@ -45,7 +47,7 @@ Ray CreateRay(float3 origin, float3 direction)
 
 float sdot(float3 x, float3 y, float f = 1.0f)
 {
-    return saturate(dot(x, y) * f);
+    return saturate(dot(x, y) * f); 
 }
 
 Ray CreateCameraRay(float2 uv)
@@ -69,6 +71,10 @@ struct RayHit
     float3 normal;
     float3 albedo;
     float3 specular;
+    float smoothness;
+    float3 emission;
+    
+    
 };
 
 RayHit CreateRayHit()
@@ -79,18 +85,24 @@ RayHit CreateRayHit()
     hit.normal = float3(0.0f, 0.0f, 0.0f);
     hit.specular = float3(0.04f, 0.04f, 0.04f);
     hit.albedo = min(1.0f - hit.specular, float3(0.8f, 0.8f, 0.8f));
+    hit.smoothness = 1.0f;
+    hit.emission = float3(0.0f,0.0f,0.0f);
     return hit;
 }
 
 void IntersectGroundPlane(Ray ray, inout RayHit bestHit)
 {
-    // 计算沿地平面相交的光线的距离
+    // Calculate distance along the ray where the ground plane is intersected
     float t = -ray.origin.y / ray.direction.y;
     if (t > 0 && t < bestHit.distance)
     {
         bestHit.distance = t;
         bestHit.position = ray.origin + t * ray.direction;
         bestHit.normal = float3(0.0f, 1.0f, 0.0f);
+        bestHit.albedo = 0.5f;
+        bestHit.specular = 0.03f;
+        bestHit.smoothness = 0.2f;
+        bestHit.emission = float3(0.0f, 0.0f, 0.0f);
     }
 }
 
@@ -117,10 +129,13 @@ float3 SampleHemisphere(float3 normal, float alpha)
     return mul(tangentSpaceDir, GetTangentSpace(normal));
     
 }
+float SmoothnessToPhongAlpha(float s)
+{
+    return pow(1000.0f, s * s);
+}
 
 void IntersectSphere(Ray ray, inout RayHit bestHit, uint sphereIndex)
 {
-
     Sphere sphere = _Spheres[sphereIndex];
     // 计算球体相交的射线距离
     float3 d = ray.origin - sphere.position;
@@ -137,13 +152,15 @@ void IntersectSphere(Ray ray, inout RayHit bestHit, uint sphereIndex)
         bestHit.normal = normalize(bestHit.position - sphere.position);
         bestHit.albedo = sphere.albedo;
         bestHit.specular = sphere.specular;
+        bestHit.smoothness = sphere.smoothness;
+        bestHit.emission = sphere.emission ;
     }
 }
 
 RayHit Trace(Ray ray)
 {
     RayHit bestHit = CreateRayHit();
-    //IntersectGroundPlane(ray, bestHit);
+    IntersectGroundPlane(ray, bestHit);
     uint numSpheres, stride;
     _Spheres.GetDimensions(numSpheres, stride);
     for (uint i = 0; i < numSpheres; i++)
@@ -165,33 +182,36 @@ float3 Shade(inout Ray ray, RayHit hit)
         hit.albedo = min(1.0f - hit.specular, hit.albedo);
         float specChance = energy(hit.specular);
         float diffChance = energy(hit.albedo);
-        float sum = specChance + diffChance;
-        specChance /= sum;
-        diffChance /= sum;
+
         // Roulette-select the ray's path
         float roulette = rand();
         if (roulette < specChance)
         {
             // Specular reflection
-            float alpha = 15.0f;
             ray.origin = hit.position + hit.normal * 0.001f;
+            float alpha = SmoothnessToPhongAlpha(hit.smoothness);
             ray.direction = SampleHemisphere(reflect(ray.direction, hit.normal), alpha);
             float f = (alpha + 2) / (alpha + 1);
             ray.energy *= (1.0f / specChance) * hit.specular * sdot(hit.normal, ray.direction, f);
         }
-        else
+        else if (diffChance > 0 && roulette < specChance + diffChance)
         {
             // Diffuse reflection
             ray.origin = hit.position + hit.normal * 0.001f;
             ray.direction = SampleHemisphere(hit.normal, 1.0f);
             ray.energy *= (1.0f / diffChance) * hit.albedo;
         }
-        return 0.0f;
+        else
+        {
+            // Terminate ray
+            ray.energy = 0.0f;
+        }
+        return hit.emission;
     }
     else
     {
         // Erase the ray's energy - the sky doesn't reflect anything
-        ray.energy = 0.09f;
+        ray.energy = 0.15f;
         
         // Sample the skybox and write it
         float theta = acos(ray.direction.y) / -PI;
