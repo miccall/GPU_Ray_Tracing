@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.GPU_Ray_Tracing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.GPU_Ray_Tracing/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,30 +18,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3680">
-              <caret line="161" column="45" lean-forward="true" selection-start-line="161" selection-start-column="45" selection-end-line="161" selection-end-column="45" />
+            <state relative-caret-position="1098">
+              <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
               <folding>
-                <marker date="1553761605663" expanded="false" signature="6:52" ph="..." />
-                <marker date="1553761605663" expanded="true" signature="53:167" ph="/* ReSharper disable InconsistentNaming ... */" />
-                <marker date="1553761605663" expanded="true" signature="185:6849" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="237:6847" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="839:905" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="937:1015" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="1048:1148" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="1200:1942" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="2035:2123" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="2178:3030" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="3071:3986" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="3297:3398" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="4025:4267" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="4298:4620" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="4664:6841" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="4870:6559" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="4941:5055" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="5372:5613" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="5691:6148" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="6169:6432" ph="{...}" />
-                <marker date="1553761605663" expanded="true" signature="6572:6639" ph="/* Assign to compute buffer ... */" />
+                <marker date="1553869927802" expanded="false" signature="6:52" ph="..." />
+                <marker date="1553869927802" expanded="true" signature="53:167" ph="/* ReSharper disable InconsistentNaming ... */" />
+                <marker date="1553869927802" expanded="true" signature="185:6898" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="237:6896" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="908:974" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="1006:1084" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="1117:1175" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="1227:1969" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="2062:2150" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="2205:3054" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="3095:4010" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="3321:3422" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="4049:4291" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="4322:4644" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="4688:6890" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="4894:6608" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="4965:5079" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="5396:5637" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="5715:6197" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="6218:6481" ph="{...}" />
+                <marker date="1553869927802" expanded="true" signature="6621:6688" ph="/* Assign to compute buffer ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Assets/Scenes/AddShader.shader">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="24" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="24" />
+              <folding>
+                <marker date="1553676870618" expanded="true" signature="26:1266" ph="{...}" />
+                <marker date="1553676870618" expanded="true" signature="47:139" ph="{...}" />
+                <marker date="1553676870618" expanded="true" signature="158:1264" ph="{...}" />
+                <marker date="1553676870618" expanded="true" signature="344:1258" ph="{...}" />
+                <marker date="1553676870618" expanded="true" signature="367:1243" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -49,8 +66,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="659">
-              <caret line="213" column="24" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="24" />
+            <state relative-caret-position="228">
+              <caret line="111" selection-start-line="111" selection-end-line="121" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -62,6 +79,13 @@
       <find>InitRenderTexture</find>
       <find>IntersectSphere</find>
       <find>smoothness</find>
+      <find>_CameraInverseProjection</find>
+      <find>CreateCameraRay</find>
+      <find>_Pixel</find>
+      <find>energy</find>
+      <find>Trace</find>
+      <find>Shade</find>
+      <find>SampleHemisphere</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -84,10 +108,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1435" />
-    <option name="height" value="1235" />
+    <option name="x" value="-15" />
+    <option name="y" value="-15" />
+    <option name="width" value="2299" />
+    <option name="height" value="1979" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -140,12 +164,15 @@
       <updated>1553609205764</updated>
       <workItem from="1553609208982" duration="5801000" />
       <workItem from="1553671632802" duration="11053000" />
-      <workItem from="1553756826369" duration="5480000" />
+      <workItem from="1553756826369" duration="9224000" />
+      <workItem from="1553854465895" duration="9119000" />
+      <workItem from="1553878674158" duration="230000" />
+      <workItem from="1553916974041" duration="2677000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22334000" />
+    <option name="totallyTimeSpent" value="38104000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -201,19 +228,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Assets/Scenes/AddShader.shader">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <marker date="1553676870618" expanded="true" signature="26:1266" ph="{...}" />
-            <marker date="1553676870618" expanded="true" signature="47:139" ph="{...}" />
-            <marker date="1553676870618" expanded="true" signature="158:1264" ph="{...}" />
-            <marker date="1553676870618" expanded="true" signature="344:1258" ph="{...}" />
-            <marker date="1553676870618" expanded="true" signature="367:1243" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scenes/CameraMove.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -238,38 +252,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingMaster.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3680">
-          <caret line="161" column="45" lean-forward="true" selection-start-line="161" selection-start-column="45" selection-end-line="161" selection-end-column="45" />
+        <state relative-caret-position="1098">
+          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
           <folding>
-            <marker date="1553761605663" expanded="false" signature="6:52" ph="..." />
-            <marker date="1553761605663" expanded="true" signature="53:167" ph="/* ReSharper disable InconsistentNaming ... */" />
-            <marker date="1553761605663" expanded="true" signature="185:6849" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="237:6847" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="839:905" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="937:1015" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="1048:1148" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="1200:1942" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="2035:2123" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="2178:3030" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="3071:3986" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="3297:3398" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="4025:4267" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="4298:4620" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="4664:6841" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="4870:6559" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="4941:5055" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="5372:5613" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="5691:6148" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="6169:6432" ph="{...}" />
-            <marker date="1553761605663" expanded="true" signature="6572:6639" ph="/* Assign to compute buffer ... */" />
+            <marker date="1553869927802" expanded="false" signature="6:52" ph="..." />
+            <marker date="1553869927802" expanded="true" signature="53:167" ph="/* ReSharper disable InconsistentNaming ... */" />
+            <marker date="1553869927802" expanded="true" signature="185:6898" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="237:6896" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="908:974" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="1006:1084" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="1117:1175" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="1227:1969" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="2062:2150" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="2205:3054" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="3095:4010" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="3321:3422" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="4049:4291" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="4322:4644" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="4688:6890" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="4894:6608" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="4965:5079" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="5396:5637" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="5715:6197" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="6218:6481" ph="{...}" />
+            <marker date="1553869927802" expanded="true" signature="6621:6688" ph="/* Assign to compute buffer ... */" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Assets/Scenes/AddShader.shader">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="24" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="24" />
+          <folding>
+            <marker date="1553676870618" expanded="true" signature="26:1266" ph="{...}" />
+            <marker date="1553676870618" expanded="true" signature="47:139" ph="{...}" />
+            <marker date="1553676870618" expanded="true" signature="158:1264" ph="{...}" />
+            <marker date="1553676870618" expanded="true" signature="344:1258" ph="{...}" />
+            <marker date="1553676870618" expanded="true" signature="367:1243" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Assets/Scenes/RayTracingShader.compute">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="659">
-          <caret line="213" column="24" selection-start-line="213" selection-start-column="24" selection-end-line="213" selection-end-column="24" />
+        <state relative-caret-position="228">
+          <caret line="111" selection-start-line="111" selection-end-line="121" selection-end-column="1" />
         </state>
       </provider>
     </entry>

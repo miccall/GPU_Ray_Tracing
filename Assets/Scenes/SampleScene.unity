@@ -283,7 +283,7 @@ MonoBehaviour:
   SphereRadius: {x: 5, y: 30}
   SpheresMax: 100
   SpherePlacementRadius: 100
-  SphereSeed: 1223832719
+  SphereSeed: 1219782583
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0

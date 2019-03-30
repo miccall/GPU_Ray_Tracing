@@ -15,14 +15,15 @@ namespace Scenes
         public uint SpheresMax = 100 ; 
         public float SpherePlacementRadius = 100.0f;
         public int SphereSeed ;
+        
         private ComputeBuffer _sphereBuffer;
         private RenderTexture _converged;
-        
         private RenderTexture _target;
         private Camera _camera;
         private uint _currentSample ;
         private Material _addMaterial;
-        
+        private static readonly int Sample = Shader.PropertyToID("_Sample");
+
         private void Awake()
         {
             _camera = GetComponent<Camera>();
@@ -34,8 +35,7 @@ namespace Scenes
         }
         private void OnDisable()
         {
-            if (_sphereBuffer != null)
-                _sphereBuffer.Release();
+            _sphereBuffer?.Release();
         }
         
         private void SetShaderParameters()
@@ -71,7 +71,7 @@ namespace Scenes
             // Blit the result texture to the screen
             if (_addMaterial == null)
                 _addMaterial = new Material(Shader.Find("Hidden/AddShader"));
-            _addMaterial.SetFloat("_Sample", _currentSample);
+            _addMaterial.SetFloat(Sample, _currentSample);
             
             Graphics.Blit(_target, _converged, _addMaterial);
             Graphics.Blit(_converged, destination);
@@ -88,11 +88,11 @@ namespace Scenes
                 _converged.Release();
             }
                 
-            
             // Get a render target for Ray Tracing
             _target = new RenderTexture(Screen.width, Screen.height, 0,
                 RenderTextureFormat.ARGBFloat, RenderTextureReadWrite.Linear) {enableRandomWrite = true};
             _target.Create();
+            
             _converged = new RenderTexture(Screen.width, Screen.height, 0,
                 RenderTextureFormat.ARGBFloat, RenderTextureReadWrite.Linear) {enableRandomWrite = true};
             _converged.Create();
@@ -147,15 +147,15 @@ namespace Scenes
                 if (chance < 0.8f)
                 {
                     // Albedo and specular color
-                    var color = Random.ColorHSV();
+                    var color = Random.ColorHSV(0.2f, 1, 0.4f, 1, 0.2f, 1.0f);
                     var metal = chance < 0.4f;
-                    sphere.albedo = metal ? Vector4.zero : new Vector4(color.r, color.g, color.b);
-                    sphere.specular = metal ? new Vector4(color.r, color.g, color.b) : new Vector4(0.04f, 0.04f, 0.04f);
+                    sphere.albedo = metal ? Vector3.zero : new Vector3(color.r, color.g, color.b);
+                    sphere.specular = metal ? new Vector3(color.r, color.g, color.b) : new Vector3(0.1f, 0.1f, 0.1f);
                     sphere.smoothness = Random.value;
                 }
                 else
                 {
-                    var emission = Random.ColorHSV(0, 1, 0, 1, 3.0f, 8.0f);
+                    var emission = Random.ColorHSV(0, 1, 0, 1, 3.0f, 6.0f);
                     //var emission = new Color(1.0f,1.0f,1.0f);
                     sphere.emission = new Vector3(emission.r, emission.g, emission.b);
                 }
