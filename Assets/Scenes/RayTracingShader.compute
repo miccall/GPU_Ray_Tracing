@@ -38,6 +38,18 @@ struct Sphere
     float smoothness;
     float3 emission;
 };
+
+struct MeshObject
+{
+    float4x4 localToWorldMatrix;
+    int indices_offset;
+    int indices_count;
+};
+
+StructuredBuffer<MeshObject> _MeshObjects;
+StructuredBuffer<float3> _Vertices;
+StructuredBuffer<int> _Indices;
+
 StructuredBuffer<Sphere> _Spheres;
 
 Ray CreateRay(float3 origin, float3 direction)
@@ -125,6 +137,32 @@ bool IntersectTriangle_MT97(Ray ray, float3 vert0, float3 vert1, float3 vert2,
     return true;
 }
 
+void IntersectMeshObject(Ray ray, inout RayHit bestHit, MeshObject meshObject)
+{
+    uint offset = meshObject.indices_offset;
+    uint count = offset + meshObject.indices_count;
+    for (uint i = offset; i < count; i += 3)
+    {
+        float3 v0 = (mul(meshObject.localToWorldMatrix, float4(_Vertices[_Indices[i]], 1))).xyz;
+        float3 v1 = (mul(meshObject.localToWorldMatrix, float4(_Vertices[_Indices[i + 1]], 1))).xyz;
+        float3 v2 = (mul(meshObject.localToWorldMatrix, float4(_Vertices[_Indices[i + 2]], 1))).xyz;
+        float t, u, v;
+        if (IntersectTriangle_MT97(ray, v0, v1, v2, t, u, v))
+        {
+            if (t > 0 && t < bestHit.distance)
+            {
+                bestHit.distance = t;
+                bestHit.position = ray.origin + t * ray.direction;
+                bestHit.normal = normalize(cross(v1 - v0, v2 - v0));
+                bestHit.albedo = 0.0f ;
+                bestHit.specular = 0.9f * float3(0.9,0.2,0.8) ;
+                bestHit.smoothness = 0.99f;
+                bestHit.emission = 0.2f;
+            }
+        }
+    }
+}
+
 void IntersectGroundPlane(Ray ray, inout RayHit bestHit)
 {
     // Calculate distance along the ray where the ground plane is intersected
@@ -197,12 +235,21 @@ RayHit Trace(Ray ray)
     RayHit bestHit = CreateRayHit();
     
     IntersectGroundPlane(ray, bestHit);
+    uint count, stride, i;
+    _Spheres.GetDimensions(count, stride);
     
-    uint numSpheres, stride;
-    _Spheres.GetDimensions(numSpheres, stride);
-    for (uint i = 0; i < numSpheres; i++)
+    /*
+    for (uint i = 0; i < count; i++)
         IntersectSphere(ray, bestHit, i);
+    */
     
+    _MeshObjects.GetDimensions(count, stride);
+    for (i = 0; i < count; i++)
+    {
+        IntersectMeshObject(ray, bestHit, _MeshObjects[i]);
+    }
+    
+    /*
     // Trace single triangle
     float3 v0 = float3(-150, 0, -150);
     float3 v1 = float3(150, 0, -150);
@@ -221,7 +268,7 @@ RayHit Trace(Ray ray)
             bestHit.emission = 0.0f;
         }
     }
-  
+    */
     return bestHit;
 }
 
@@ -267,7 +314,7 @@ float3 Shade(inout Ray ray, RayHit hit)
     else
     {
         // Erase the ray's energy - the sky doesn't reflect anything
-        ray.energy = 0.0f;
+        ray.energy = 0.1f;
         
         // Sample the skybox and write it
         float theta = acos(ray.direction.y) / -PI;
